@@ -6,7 +6,7 @@
 /*   By: mkherbou <mkherbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:29:44 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/08 21:23:01 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:21:18 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_atoi(const char *str)
 		printf("nb invalide");
 		exit(1);
 	}
-	return (resultat * sign);
+	return (int)(resultat * sign);
 }
 
 t_list	*ft_lstlast(t_list *lst)
@@ -67,10 +67,15 @@ void	ft_putstr(char *str)
 		write(1, &str[i++], 1);
 }
 
-void	ft_lstdelone(t_list *lst, void (*del)(int))
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst)
+	if (!new)
 		return ;
-	del(lst->nbr);
-	free(lst);
+	if (!lst)
+	{
+		*lst = new;
+		return;
+	}
+	new->next = *lst;
+	*lst = new;
 }

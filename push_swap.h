@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:13:48 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/09 03:25:53 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/12 10:16:01 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ typedef struct s_list
 {	
 	int nbr;
 	int index;
+	int pos;
+	int cost_a;
+	int	cost_b;
+	int	target_pos;
 	struct s_list *next;
 }	t_list;
 
@@ -31,8 +35,10 @@ typedef struct s_list
 /*    libft functions       */
 int	ft_atoi(const char *str);
 int	ft_isdigit(int c);
+int	ft_lstsize(t_list *stack);
 t_list *ft_lstlast(t_list *lst);
 void	ft_putstr(char *str);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 /* push_swap functions */
 t_list	*fill_stack(char **av);
@@ -42,6 +48,8 @@ void	add_numbers(t_list **stack_a, t_list *new);
 //void	free_stack(t_list **stack);
 void	print_list(t_list *stack);
 int		is_sorted(t_list *stack);
+void	add_index(t_list *stack, int stacklen);
+void	sort_for_three(t_list *stack);
 
 /* actions functions */
 void	sa(t_list *stack_a);

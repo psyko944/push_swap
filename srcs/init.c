@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 04:16:29 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/09 02:45:21 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:18:46 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_list *new_stack(int nb)
 	if (!new)
 		return NULL;
 	new->nbr = nb;
+	new->index = 0;
 	new->next = NULL;
 	return (new);
 }
@@ -40,6 +41,7 @@ t_list *fill_stack(char **av)
 	t_list *stack_a;
 	int		nb;
 	int		i;
+	int		stacklen;
 
 	stack_a = NULL;
 	nb = 0;
@@ -54,6 +56,8 @@ t_list *fill_stack(char **av)
 			add_numbers(&stack_a, new_stack((int)nb));
 		i++;
 	}
+		stacklen = ft_lstsize(stack_a);
+		add_index(stack_a, stacklen);
 		return stack_a;
 }
 
@@ -69,4 +73,30 @@ void	add_numbers(t_list **stack_a, t_list *new)
 	}
 	last_nb = ft_lstlast(*stack_a);
 	last_nb->next = new;
+}
+
+void	add_index(t_list *stack, int stacklen)
+{
+	t_list	*before;
+	t_list	*after;
+	int		temp;
+	while (--stacklen)
+	{
+		before = stack;
+		temp = INT_MIN;
+		after = NULL;
+		while(before)
+		{
+			if (before->nbr > temp && before->index == 0)
+			{
+				temp = before->nbr;
+				after = before;
+				before = stack;
+			}
+			else
+				before = before->next;
+		}
+		if (after != NULL)
+			after->index = stacklen;
+	}
 }

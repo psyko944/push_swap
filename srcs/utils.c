@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 20:21:24 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/08 02:25:19 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/11 01:59:33 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,21 @@ void	print_list(t_list *stack)
 	printf("pile : \n");
 	while (stack != NULL)
 	{
-		printf("%d\n", stack->nbr);
+		printf("nombre : %d index : %d\n", stack->nbr, stack->index);
 		stack = stack->next;
 	}
 	printf("fin de pile\n\n");
+}
+
+int	ft_lstsize(t_list *stack)
+{
+	int	i;
+
+	i = 0;
+	while(stack)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
 }

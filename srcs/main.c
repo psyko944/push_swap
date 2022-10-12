@@ -6,11 +6,23 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:24:46 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/09 02:38:53 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:57:18 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int is_sorted(t_list *stack)
+{
+	if (!stack)
+		return (0);
+	while(stack && stack->next)
+	{
+		if (stack->nbr > stack->next->nbr)
+			return (0);
+	}
+	return (1);
+}
 
 static int check_double(char **av)
 {
@@ -54,7 +66,6 @@ int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		size;
 	
 	if (ac < 2)
 	{
@@ -70,7 +81,7 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	print_list(stack_a);
 	print_list(stack_b);
-	ra(&stack_a);
+	rra(&stack_a);
 	print_list(stack_a);
 	return (0);
 }
