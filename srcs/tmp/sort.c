@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 01:39:36 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/12 11:23:44 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:27:05 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@ void	sort_for_three(t_list *stack)
 	else
 		rra(&stack);
 	if (stack->index > stack->next->index)
-		rra(&stack);
+		sa(stack);
+	printf("before sort\n");
+	print_list(stack);
 }
 
-/*void sort(t_list **stack_a, t_list **stack_b)
+void sort(t_list **stack_a, t_list **stack_b, int stacklen)
 {
-	fill_stack_b(stack_b, stack_a);
-	sort_for_three(stack_a);
+	fill_stack_b(stack_b, stack_a, stacklen);
+	//sort_for_three(stack_a);
 
 }
 
@@ -51,10 +53,15 @@ void fill_stack_b(t_list **stack_b, t_list **stack_a, int stacklen)
 {
 	if (!*stack_a)
 		return ;
-	while (stack_a && stacklen > 3)
+	int	lentmp;
+	
+	lentmp = stacklen;
+	while (*stack_a && stacklen > 3)
 	{
-		pb;
-		stack = stack->next;
+		if ((*stack_a)->index < lentmp / 2)
+			pb;
+		else
+			ra;
 		stacklen--;
 	}
-}*/
+}

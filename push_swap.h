@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:13:48 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/12 10:16:01 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:49:36 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,11 @@ void	add_numbers(t_list **stack_a, t_list *new);
 //void	free_stack(t_list **stack);
 void	print_list(t_list *stack);
 int		is_sorted(t_list *stack);
+int		get_high_index(t_list *stack);
 void	add_index(t_list *stack, int stacklen);
 void	sort_for_three(t_list *stack);
+void	get_pos(t_list *stack);
+void	get_target_pos(t_list *stack_a, t_list *stack_b);
 
 /* actions functions */
 void	sa(t_list *stack_a);

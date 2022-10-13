@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 20:21:24 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/11 01:59:33 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/13 12:31:46 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	print_list(t_list *stack)
 	printf("pile : \n");
 	while (stack != NULL)
 	{
-		printf("nombre : %d index : %d\n", stack->nbr, stack->index);
+		printf("nombre : %d index : %d pos : %d\n", stack->nbr, stack->index, stack->pos);
 		stack = stack->next;
 	}
 	printf("fin de pile\n\n");

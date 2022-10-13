@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 02:19:22 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/12 10:07:16 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/13 11:11:02 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 static void	rotate(t_list **stack)
 {
-	int tmp;
+	t_list	*tmp;
+	t_list	*last;
 	if (!*stack || !(*stack)->next)
 		return ;
-	tmp = (*stack)->nbr;
+	tmp = *stack;
 	*stack = (*stack)->next;
-	add_numbers(stack, new_stack(tmp));
+	last = ft_lstlast(*stack);
+	last->next = tmp;
+	last->next->next = NULL;
 }
 
 void	ra(t_list **stack_a)

@@ -6,7 +6,7 @@
 #    By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/15 06:26:53 by mkherbou          #+#    #+#              #
-#    Updated: 2022/10/12 16:17:58 by mkherbou         ###   ########.fr        #
+#    Updated: 2022/10/13 12:33:49 by mkherbou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ NAME = push_swap
 
 SRCS = srcs/main.c \
 srcs/utils.c \
-srcs/sort.c \
 srcs/rotate.c \
 srcs/push.c \
 srcs/swap.c \
 srcs/init.c \
 srcs/libft.c  \
 srcs/reverse_rotate.c \
+srcs/pos.c \
 
 # Colors
 

@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:24:46 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/12 16:57:18 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:52:58 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int is_sorted(t_list *stack)
 	{
 		if (stack->nbr > stack->next->nbr)
 			return (0);
+		stack = stack->next;
 	}
 	return (1);
 }
@@ -66,6 +67,7 @@ int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	int stacklen;
 	
 	if (ac < 2)
 	{
@@ -79,9 +81,23 @@ int	main(int ac, char **av)
 	}
 	stack_a = fill_stack(av);
 	stack_b = NULL;
+	stacklen = ft_lstsize(stack_a);
+	(void)stacklen;
+	(void)stack_b;
 	print_list(stack_a);
-	print_list(stack_b);
-	rra(&stack_a);
+	/*if (stacklen == 3)
+		sort_for_three(stack_a);
+	else
+		printf("il n'y pas 3 nombres");
+	printf("\nsort\n");
+	if (is_sorted(stack_a))
+		print_list(stack_a);
+	else
+		printf("la liste n'as pas ete triee\n");*/
+	get_pos(stack_a);
 	print_list(stack_a);
+	ft_lstadd_front(&stack_b, new_stack(58));
+	ft_lstadd_front(&stack_b, new_stack(88));
+	get_target_pos(stack_a, stack_b);
 	return (0);
 }
