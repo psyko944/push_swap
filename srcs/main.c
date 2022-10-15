@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:24:46 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/13 18:52:58 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/15 13:34:13 by sniperking       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,16 @@ static int check_double(char **av)
 	return (0);
 }
 
+static void	selection_sort(t_list *stack_a, t_list *stack_b, int stacklen)
+{
+	if (stacklen == 2)
+		sa(stack_a);
+	else if (stacklen == 3)
+		sort_for_three(stack_a);
+	else
+		sort(stack_a, stack_b, stacklen);
+}
+
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
@@ -82,8 +92,6 @@ int	main(int ac, char **av)
 	stack_a = fill_stack(av);
 	stack_b = NULL;
 	stacklen = ft_lstsize(stack_a);
-	(void)stacklen;
-	(void)stack_b;
 	print_list(stack_a);
 	/*if (stacklen == 3)
 		sort_for_three(stack_a);
