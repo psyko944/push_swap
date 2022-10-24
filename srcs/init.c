@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 04:16:29 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/12 16:18:46 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/17 00:15:26 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ t_list *new_stack(int nb)
 		return NULL;
 	new->nbr = nb;
 	new->index = 0;
+	new->pos = -1;
+	new->target_pos = -1;
+	new->cost_a = -1;
+	new->cost_b = -1;
 	new->next = NULL;
 	return (new);
 }

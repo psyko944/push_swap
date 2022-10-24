@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:13:48 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/13 18:49:36 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:53:25 by mkherbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,22 @@ t_list	*fill_stack(char **av);
 t_list	*new_stack(int nb);
 t_list	*get_stack_before_last(t_list *stack);
 void	add_numbers(t_list **stack_a, t_list *new);
-//void	free_stack(t_list **stack);
+void	free_stack(t_list **stack);
 void	print_list(t_list *stack);
 int		is_sorted(t_list *stack);
 int		get_high_index(t_list *stack);
+int 	ft_abs(int nb);
+int		check_arg(char **av);
+int		get_min_index(t_list *stack);
+int		get_min_index_pos(t_list *stack);
 void	add_index(t_list *stack, int stacklen);
-void	sort_for_three(t_list *stack);
+void	sort_for_three(t_list **stack);
 void	get_pos(t_list *stack);
-void	get_target_pos(t_list *stack_a, t_list *stack_b);
+void	get_cost(t_list *stack_a, t_list *stack_b);
+void	get_target_pos(t_list **stack_a, t_list **stack_b);
+void	sort(t_list **stack_a, t_list **stack_b, int stacklen);
+void	move(t_list **stack_a, t_list **stack_b, int cost_a, int cost_b);
+void	select_move(t_list **stack_a, t_list **stack_b);
 
 /* actions functions */
 void	sa(t_list *stack_a);
