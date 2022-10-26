@@ -6,7 +6,7 @@
 /*   By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 01:39:36 by mkherbou          #+#    #+#             */
-/*   Updated: 2022/10/25 01:30:02 by mkherbou         ###   ########.fr       */
+/*   Updated: 2022/10/26 00:39:27 by sniperking       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static void	move_to_top(t_list **stack_a)
 	int	stacklen;
 
 	stacklen = ft_lstsize(*stack_a);
+	get_pos(*stack_a);
 	min_index_pos = get_min_index_pos(*stack_a);
 	if (min_index_pos > stacklen / 2)
 	{
@@ -101,17 +102,12 @@ void	sort(t_list **stack_a, t_list **stack_b, int stacklen)
 {
 	fill_stack_b(stack_b, stack_a, stacklen);
 	sort_for_three(stack_a);
-	get_target_pos(stack_a, stack_b);
-	get_cost(*stack_a, *stack_b);
-	select_move(stack_a, stack_b);
-	if (!is_sorted(*stack_a))
-		move_to_top(stack_a);
-	/*while (*stack_b)
+	while (*stack_b)
 	{
 		get_target_pos(stack_a, stack_b);
 		get_cost(*stack_a, *stack_b);
 		select_move(stack_a, stack_b);
-	}*/
-	/*if (!is_sorted(*stack_a))
-		move_to_top(stack_a);*/
+	}
+	if (!is_sorted(*stack_a))
+		move_to_top(stack_a);
 }
