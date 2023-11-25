@@ -20,7 +20,8 @@ srcs/swap.c \
 srcs/init.c \
 srcs/libft.c  \
 srcs/reverse_rotate.c \
-srcs/pos.c \
+srcs/check.c \
+srcs/pos.c 
 
 # Colors
 
@@ -62,13 +63,13 @@ all:	$(NAME)
 
 clean:
 	@$(RM) ${OBJS}
-	@echo "$(BLUE)so_long object files cleaned!$(DEF_COLOR)"
+	@echo "$(BLUE)push_swap object files cleaned!$(DEF_COLOR)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(CYAN) have been deleted$(DEF_COLOR)"
+	@echo "$(CYAN)$(NAME) have been deleted$(DEF_COLOR)"
 
 re: fclean all
-	@echo "$(GREEN)Cleaned and rebuilt everything for so_long!$(DEF_COLOR)"
+	@echo "$(GREEN)Cleaned and rebuilt everything for push_swap!$(DEF_COLOR)"
 
-.PHONY: all clean fclean re minilibx libft printf bonus
+.PHONY: all clean fclean re minilibx printf bonus
