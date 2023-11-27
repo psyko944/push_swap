@@ -43,17 +43,22 @@ RM = rm -f
 
 HEADER = push_swap.h
 CFLAGS = -Wall -Wextra -Werror 
+PRINTF_DIR = ft_printf
+PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 OBJS = ${SRCS:.c=.o}
 
-$(NAME): $(OBJS) 
-		${CC} $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME):$(PRINTF) $(OBJS) 
+		${CC} $(CFLAGS) $(OBJS) $(PRINTF) -o $(NAME)
 		
 #$(OBJS) : $(HEADER)
 
 
 all:	$(NAME)
 		@echo "$(GREEN)push swap compiled!$(DEF_COLOR)"
+
+$(PRINTF):
+	$(MAKE) -C $(PRINTF_DIR)
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -62,14 +67,16 @@ all:	$(NAME)
 -include $(SRCS:.c=.d)
 
 clean:
+	@$(MAKE) -C $(PRINTF_DIR) clean
 	@$(RM) ${OBJS}
 	@echo "$(BLUE)push_swap object files cleaned!$(DEF_COLOR)"
 
 fclean: clean
+	@$(MAKE) -C $(PRINTF_DIR) fclean
 	@$(RM) $(NAME)
 	@echo "$(CYAN)$(NAME) have been deleted$(DEF_COLOR)"
 
 re: fclean all
 	@echo "$(GREEN)Cleaned and rebuilt everything for push_swap!$(DEF_COLOR)"
 
-.PHONY: all clean fclean re minilibx printf bonus
+.PHONY: all clean fclean re printf bonus

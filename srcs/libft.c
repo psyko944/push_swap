@@ -43,7 +43,7 @@ int	ft_atoi(const char *str)
 	}
 	if ((resultat * sign) < INT_MIN ||  (resultat * sign) > INT_MAX)
 	{
-		printf("nb invalide");
+		printf("overflow");
 		exit(1);
 	}
 	return (int)(resultat * sign);
@@ -58,14 +58,14 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-void	ft_putstr(char *str)
+/*void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
 	while(str[i])
 		write(1, &str[i++], 1);
-}
+}*/
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

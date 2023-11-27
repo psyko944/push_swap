@@ -23,6 +23,7 @@ static int	is_number(char *av)
 	{
 		if (!ft_isdigit(av[i]))
 			return (0);
+		ft_printf("on va tester ca\n");
 		i++;
 	}
 	return (1);

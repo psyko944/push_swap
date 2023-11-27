@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "ft_printf/ft_printf.h"
 
 /* struct for linked list */
 typedef struct s_list
@@ -37,7 +38,7 @@ int	ft_atoi(const char *str);
 int	ft_isdigit(int c);
 int	ft_lstsize(t_list *stack);
 t_list *ft_lstlast(t_list *lst);
-void	ft_putstr(char *str);
+//void	ft_putstr(char *str);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
 /* push_swap functions */

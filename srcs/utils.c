@@ -35,10 +35,10 @@ void	print_list(t_list *stack)
 	printf("pile : \n");
 	while (stack != NULL)
 	{
-		printf("nombre : %d index : %d pos : %d\ttarget_pos : %d\tcost_a : %d cost_b : %d\n", stack->nbr, stack->index, stack->pos, stack->target_pos, stack->cost_a, stack->cost_b);
+		ft_printf("nombre : %d index : %d pos : %d\ttarget_pos : %d\tcost_a : %d cost_b : %d\n", stack->nbr, stack->index, stack->pos, stack->target_pos, stack->cost_a, stack->cost_b);
 		stack = stack->next;
 	}
-	printf("fin de pile\n\n");
+	ft_printf("fin de pile\n\n");
 }
 
 int	ft_lstsize(t_list *stack)
