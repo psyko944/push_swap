@@ -37,7 +37,7 @@ WHITE = \033[0;97m
 PURPLE= \033[38;2;255;105;180m
 RESET= \033[0m
 
-CC = gcc
+CC = cc
 
 RM = rm -f
 

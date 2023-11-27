@@ -21,6 +21,7 @@ static int	is_number(char *av)
 			i++;
 	while(av[i])
 	{
+		ft_printf("test\n");
 		if (!ft_isdigit(av[i]))
 			return (0);
 		ft_printf("on va tester ca\n");

@@ -12,8 +12,9 @@ int main(int ac, char **av)
 		ft_printf("Error\n wrong number of arguments\n");
 		return (0);
 	}
-	while (*av)
-		ft_printf("%s\n",*av++);
+	char **cpy = av;
+	while (*cpy)
+		ft_printf("%s\n",*cpy++);
 	if (!check_arg(av))
 	{
 		ft_printf("Error\n incorrect format\n");
