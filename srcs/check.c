@@ -11,7 +11,20 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <ctype.h>
 
+int	len_tab(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i++])
+	{
+		if (!ft_strlen(av[i]))
+			return (i);
+	}
+	return (i);
+}
 static int	is_number(char *av)
 {
 	int	i;
@@ -21,12 +34,11 @@ static int	is_number(char *av)
 			i++;
 	while(av[i])
 	{
-		ft_printf("test\n");
 		if (!ft_isdigit(av[i]))
 			return (0);
-		ft_printf("on va tester ca\n");
 		i++;
 	}
+	//printf("\n\nfin de l'arg\n\n");
 	return (1);
 }
 
@@ -37,7 +49,7 @@ static int	check_double(char **av)
 	int	k;
 	int	a;
 
-	i = 1;
+	i = 0;
 	while(av[i])
 	{
 		a = ft_atoi(av[i]);
@@ -58,7 +70,12 @@ int check_arg(char **av)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
+	/*if (len_tab(av) == 2)
+		av = ft_split(av[1], ' ');*/	
+	/*char **cpy = av;
+	while (*cpy)
+		ft_printf("cpy = %s\n",*cpy++);*/
 	while (av[i])
 	{
 		if (av[i][0] == '\0')

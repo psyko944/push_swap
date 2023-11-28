@@ -21,6 +21,7 @@ srcs/init.c \
 srcs/libft.c  \
 srcs/reverse_rotate.c \
 srcs/check.c \
+srcs/ft_split.c \
 srcs/pos.c 
 
 # Colors

@@ -25,7 +25,7 @@ int is_sorted(t_list *stack)
 	return (1);
 }
 
-static void	selection_sort(t_list **stack_a, t_list **stack_b, int stacklen)
+/*static void	selection_sort(t_list **stack_a, t_list **stack_b, int stacklen)
 {
 	printf("valeur de stacklen : %d\n", stacklen);
 	if (stacklen == 2)
@@ -34,7 +34,7 @@ static void	selection_sort(t_list **stack_a, t_list **stack_b, int stacklen)
 		sort_for_three(stack_a);
 	else
 		sort(stack_a, stack_b, stacklen);
-}
+}*/
 
 int	main(int ac, char **av)
 {

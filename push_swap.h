@@ -6,7 +6,7 @@
 /*   By: mekherbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 23:07:21 by mekherbo          #+#    #+#             */
-/*   Updated: 2023/11/25 23:07:23 by mekherbo         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:39:44 by mekherbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	ft_atoi(const char *str);
 int	ft_isdigit(int c);
 int	ft_lstsize(t_list *stack);
 t_list *ft_lstlast(t_list *lst);
+char	**ft_split(char const *s, char c);
 //void	ft_putstr(char *str);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
@@ -62,6 +63,7 @@ void	get_target_pos(t_list **stack_a, t_list **stack_b);
 void	sort(t_list **stack_a, t_list **stack_b, int stacklen);
 void	move(t_list **stack_a, t_list **stack_b, int cost_a, int cost_b);
 void	select_move(t_list **stack_a, t_list **stack_b);
+int		len_tab(char **av);
 
 /* actions functions */
 void	sa(t_list *stack_a);

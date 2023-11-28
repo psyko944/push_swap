@@ -49,13 +49,13 @@ t_list *fill_stack(char **av)
 
 	stack_a = NULL;
 	nb = 0;
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
 		nb = ft_atoi(av[i]);
 			//error_free(stack_a);
-		if (i == 1)
-		stack_a = new_stack((int)nb);
+		if (i == 0)
+			stack_a = new_stack((int)nb);
 		else
 			add_numbers(&stack_a, new_stack((int)nb));
 		i++;
@@ -82,25 +82,25 @@ void	add_numbers(t_list **stack_a, t_list *new)
 void	add_index(t_list *stack, int stacklen)
 {
 	t_list	*before;
-	t_list	*after;
-	int		temp;
+	t_list	*max_node;
+	int		max;
 	while (--stacklen)
 	{
 		before = stack;
-		temp = INT_MIN;
-		after = NULL;
+		max = INT_MIN;
+		max_node = NULL;
 		while(before)
 		{
-			if (before->nbr > temp && before->index == 0)
+			if (before->nbr > max && before->index == 0)
 			{
-				temp = before->nbr;
-				after = before;
+				max = before->nbr;
+				max_node = before;
 				before = stack;
 			}
 			else
 				before = before->next;
 		}
-		if (after != NULL)
-			after->index = stacklen;
+		if (max_node != NULL)
+			max_node->index = stacklen;
 	}
 }
