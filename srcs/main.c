@@ -14,16 +14,15 @@ int is_sorted(t_list *stack)
 	return (1);
 }
 
-/*static void	selection_sort(t_list **stack_a, t_list **stack_b, int stacklen)
+static void	selection_sort(t_list **stack_a, t_list **stack_b, int stacklen)
 {
-	printf("valeur de stacklen : %d\n", stacklen);
 	if (stacklen == 2)
 		sa(*stack_a);
 	else if (stacklen == 3)
 		sort_for_three(stack_a);
 	else
 		sort(stack_a, stack_b, stacklen);
-}*/
+}
 
 int main(int ac, char **av)
 {
@@ -50,13 +49,8 @@ int main(int ac, char **av)
 	stack_a = fill_stack(av);
 	stack_b = NULL;
 	stacklen = ft_lstsize(stack_a);
-	if (is_sorted(stack_a))
-		print_list(stack_a);
-	sa(stack_a);
-	if (is_sorted(stack_a))
-		print_list(stack_a);
-	(void)stack_b;
-	(void)stacklen;
+	if (!is_sorted(stack_a))
+		selection_sort(&stack_a, &stack_b, stacklen);
 	free_stack(&stack_a);
 	return (0);
 }

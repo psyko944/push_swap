@@ -6,7 +6,7 @@
 #    By: mkherbou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/15 06:26:53 by mkherbou          #+#    #+#              #
-#    Updated: 2022/10/13 12:33:49 by mkherbou         ###   ########.fr        #
+#    Updated: 2023/11/29 12:40:23 by mekherbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,11 @@ srcs/push.c \
 srcs/swap.c \
 srcs/init.c \
 srcs/libft.c  \
+srcs/sort.c \
 srcs/reverse_rotate.c \
 srcs/check.c \
+srcs/move.c \
+srcs/cost.c \
 srcs/ft_split.c \
 srcs/pos.c 
 
@@ -43,7 +46,7 @@ CC = cc
 RM = rm -f
 
 HEADER = push_swap.h
-CFLAGS = -Wall -Wextra -Werror 
+#CFLAGS = -Wall -Wextra -Werror -g3 
 PRINTF_DIR = ft_printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 

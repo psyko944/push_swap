@@ -16,7 +16,6 @@ int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
-	ft_printf("c = %c\n", c);
 	return (0);
 }
 
@@ -58,15 +57,6 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-
-/*void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while(str[i])
-		write(1, &str[i++], 1);
-}*/
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "ft_printf/ft_printf.h"
+# include "srcs_bonus/get_next_line.h"
 
 /* struct for linked list */
 typedef struct s_list

@@ -25,7 +25,6 @@ void	get_cost(t_list *stack_a, t_list *stack_b)
 		if (stack_b->pos > size_b / 2)
 			stack_b->cost_b = (size_b - stack_b->pos) * -1;
 		stack_b->cost_a = stack_b->target_pos;
-		printf("%d\n", stack_b->cost_a);
 		if (stack_b->target_pos > size_a /2)
 			stack_b->cost_a = (size_a - stack_b->target_pos) * - 1;
 		stack_b = stack_b->next;
@@ -41,7 +40,6 @@ void	select_move(t_list **stack_a, t_list **stack_b)
 	
 	tmp = *stack_b;
 	min_cost = INT_MAX;
-	printf("==APU==\n\n\n\n");
 	while (tmp)
 	{
 		if (ft_abs(tmp->cost_a) + ft_abs(tmp->cost_b) < min_cost)
