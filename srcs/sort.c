@@ -23,7 +23,6 @@ int	get_high_index(t_list *stack)
 	{
 		if (i < stack->index)
 			i = stack->index;
-		
 		stack = stack->next;
 	}
 	return (i);
@@ -31,7 +30,7 @@ int	get_high_index(t_list *stack)
 
 void	sort_for_three(t_list **stack)
 {
-	int max_index;
+	int	max_index;
 
 	if ((!*stack && !(*stack)->next) || is_sorted(*stack))
 		return ;
@@ -64,12 +63,11 @@ static void	fill_stack_b(t_list **stack_b, t_list **stack_a, int stacklen)
 			ra(stack_a);
 		stacklen--;
 	}
-	while(lentmp - number_pushed > 3)
+	while (lentmp - number_pushed > 3)
 	{
 		pb(stack_b, stack_a);
 		number_pushed++;
 	}
-	
 }
 
 static void	move_to_top(t_list **stack_a)

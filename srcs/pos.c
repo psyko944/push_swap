@@ -47,9 +47,7 @@ static int	find_target(t_list **stack_a, int index, int target_pos)
 	while (tmp)
 	{
 		if (tmp->index == get_min_index(*stack_a))
-		{
 			target_pos = tmp->pos;
-		}
 		tmp = tmp->next;
 	}
 	return (target_pos);
@@ -57,8 +55,8 @@ static int	find_target(t_list **stack_a, int index, int target_pos)
 
 void	get_target_pos(t_list **stack_a, t_list **stack_b)
 {
-	t_list *tmp_b;
-	int	target_pos;
+	t_list	*tmp_b;
+	int		target_pos;
 
 	if (!*stack_a || !stack_b)
 		return ;

@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 #include "get_next_line.h"
 
+static size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 char	*ft_new_save(char *save)
 {
 	int		i;
@@ -102,19 +112,4 @@ char	*ft_read(int fd, char *save)
 	}
 	free(buffer);
 	return (save);
-}
-
-int main()
-{
-	int fd = open("bib.txt", O_RDONLY);
-	char *str = get_next_line(fd);
-	while (str)
-	{
-		printf("%s", str);
-		free(str);
-		str = get_next_line(fd);
-	}
-	free(str);
-	close(fd);
-	return (0);
 }

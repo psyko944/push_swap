@@ -25,20 +25,20 @@ int	len_tab(char **av)
 	}
 	return (i);
 }
+
 static int	is_number(char *av)
 {
 	int	i;
 
 	i = 0;
 	if (av[0] == '+' || (av[0] == '-' && av[1] != '\0'))
-			i++;
-	while(av[i])
+		i++;
+	while (av[i])
 	{
 		if (!ft_isdigit(av[i]))
 			return (0);
 		i++;
 	}
-	//printf("\n\nfin de l'arg\n\n");
 	return (1);
 }
 
@@ -50,7 +50,7 @@ static int	check_double(char **av)
 	int	a;
 
 	i = 0;
-	while(av[i])
+	while (av[i])
 	{
 		a = ft_atoi(av[i]);
 		j = i + 1;
@@ -66,22 +66,17 @@ static int	check_double(char **av)
 	return (1);
 }
 
-int check_arg(char **av)
+int	check_arg(char **av)
 {
 	int	i;
 
 	i = 0;
-	/*if (len_tab(av) == 2)
-		av = ft_split(av[1], ' ');*/	
-	/*char **cpy = av;
-	while (*cpy)
-		ft_printf("cpy = %s\n",*cpy++);*/
 	while (av[i])
 	{
 		if (av[i][0] == '\0')
 			return (0);
 		if (!is_number(av[i]))
-			return (0);	
+			return (0);
 		i++;
 	}
 	if (!check_double(av))

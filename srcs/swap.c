@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../push_swap.h"
 
 static void	swap(t_list *stack)
 {
 	int	nb_tmp;
 	int	index_tmp;
+
 	if (!stack || !stack->next)
 		return ;
 	nb_tmp = stack->nbr;

@@ -25,19 +25,19 @@ void	get_cost(t_list *stack_a, t_list *stack_b)
 		if (stack_b->pos > size_b / 2)
 			stack_b->cost_b = (size_b - stack_b->pos) * -1;
 		stack_b->cost_a = stack_b->target_pos;
-		if (stack_b->target_pos > size_a /2)
-			stack_b->cost_a = (size_a - stack_b->target_pos) * - 1;
+		if (stack_b->target_pos > size_a / 2)
+			stack_b->cost_a = (size_a - stack_b->target_pos) * -1;
 		stack_b = stack_b->next;
 	}
 }
 
 void	select_move(t_list **stack_a, t_list **stack_b)
 {
-	t_list *tmp;
-	int min_cost;
-	int	min_cost_a;
-	int	min_cost_b;
-	
+	t_list	*tmp;
+	int		min_cost;
+	int		min_cost_a;
+	int		min_cost_b;
+
 	tmp = *stack_b;
 	min_cost = INT_MAX;
 	while (tmp)

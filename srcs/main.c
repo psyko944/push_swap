@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mekherbo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/01 13:45:38 by mekherbo          #+#    #+#             */
+/*   Updated: 2023/12/01 13:45:41 by mekherbo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../push_swap.h"
 
-
-int is_sorted(t_list *stack)
+int	is_sorted(t_list *stack)
 {
 	if (!stack)
 		return (0);
@@ -24,12 +34,11 @@ static void	selection_sort(t_list **stack_a, t_list **stack_b, int stacklen)
 		sort(stack_a, stack_b, stacklen);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-
-	t_list	*stack_a = NULL;
+	t_list	*stack_a;
 	t_list	*stack_b;
-	int stacklen;
+	int		stacklen;
 
 	if (ac < 2)
 	{
@@ -45,7 +54,6 @@ int main(int ac, char **av)
 		ft_printf("Error\n incorrect format\n");
 		return (0);
 	}
-	(void)stacklen;
 	stack_a = fill_stack(av);
 	stack_b = NULL;
 	stacklen = ft_lstsize(stack_a);

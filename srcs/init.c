@@ -15,21 +15,19 @@
 t_list	*get_stack_before_last(t_list *stack)
 {
 	if (!stack)
-		return NULL;
-	while(stack && stack->next->next)
-	{
+		return (NULL);
+	while (stack && stack->next->next)
 		stack = stack->next;
-	}
 	return (stack);
 }
 
-t_list *new_stack(int nb)
+t_list	*new_stack(int nb)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = malloc(sizeof * new);
 	if (!new)
-		return NULL;
+		return (NULL);
 	new->nbr = nb;
 	new->index = 0;
 	new->pos = -1;
@@ -40,9 +38,9 @@ t_list *new_stack(int nb)
 	return (new);
 }
 
-t_list *fill_stack(char **av)
+t_list	*fill_stack(char **av)
 {
-	t_list *stack_a;
+	t_list	*stack_a;
 	int		nb;
 	int		i;
 	int		stacklen;
@@ -53,21 +51,21 @@ t_list *fill_stack(char **av)
 	while (av[i])
 	{
 		nb = ft_atoi(av[i]);
-			//error_free(stack_a);
 		if (i == 0)
 			stack_a = new_stack((int)nb);
 		else
 			add_numbers(&stack_a, new_stack((int)nb));
 		i++;
 	}
-		stacklen = ft_lstsize(stack_a);
-		add_index(stack_a, stacklen);
-		return stack_a;
+	stacklen = ft_lstsize(stack_a);
+	add_index(stack_a, stacklen);
+	return (stack_a);
 }
 
 void	add_numbers(t_list **stack_a, t_list *new)
 {
-	t_list *last_nb;
+	t_list	*last_nb;
+
 	if (!new)
 		return ;
 	if (!*stack_a)
@@ -84,12 +82,13 @@ void	add_index(t_list *stack, int stacklen)
 	t_list	*before;
 	t_list	*max_node;
 	int		max;
+
 	while (--stacklen)
 	{
 		before = stack;
 		max = INT_MIN;
 		max_node = NULL;
-		while(before)
+		while (before)
 		{
 			if (before->nbr > max && before->index == 0)
 			{

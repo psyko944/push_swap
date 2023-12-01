@@ -14,7 +14,8 @@
 
 static void	push(t_list **stack, t_list **push)
 {
-	t_list *new;
+	t_list	*new;
+
 	if (!*push)
 		return ;
 	if (!*stack)

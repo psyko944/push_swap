@@ -31,28 +31,25 @@ int	ft_atoi(const char *str)
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-	{	
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			sign = -sign;
-		i++;
-	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		resultat = resultat * 10 - 48 + str[i];
 		i++;
 	}
-	if ((resultat * sign) < INT_MIN ||  (resultat * sign) > INT_MAX)
+	if ((resultat * sign) < INT_MIN || (resultat * sign) > INT_MAX)
 	{
 		printf("overflow");
 		exit(1);
 	}
-	return (int)(resultat * sign);
+	return ((int)(resultat * sign));
 }
 
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return NULL;
+		return (NULL);
 	while (lst && lst->next)
 		lst = lst->next;
 	return (lst);
@@ -65,7 +62,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	if (!lst)
 	{
 		*lst = new;
-		return;
+		return ;
 	}
 	new->next = *lst;
 	*lst = new;

@@ -12,7 +12,8 @@
 
 #include "../push_swap.h"
 
-static void double_rotate(t_list **stack_a, t_list **stack_b, int *cost, int *cost2)
+static void	double_rotate(t_list **stack_a, t_list **stack_b,
+	int *cost, int *cost2)
 {
 	while (*cost > 0 && *cost2 > 0)
 	{
@@ -22,7 +23,8 @@ static void double_rotate(t_list **stack_a, t_list **stack_b, int *cost, int *co
 	}
 }
 
-static void	double_rev_rotate(t_list **stack_a, t_list **stack_b, int *cost , int *cost2)
+static void	double_rev_rotate(t_list **stack_a, t_list **stack_b,
+	int *cost, int *cost2)
 {
 	while (*cost < 0 && *cost2 < 0)
 	{

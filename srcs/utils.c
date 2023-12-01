@@ -14,12 +14,11 @@
 
 void	free_stack(t_list **stack)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!stack || !*stack)
 		return ;
-
-	while(*stack)
+	while (*stack)
 	{
 		tmp = (*stack)->next;
 		free (*stack);
@@ -28,7 +27,7 @@ void	free_stack(t_list **stack)
 	*stack = NULL;
 }
 
-void	print_list(t_list *stack)
+/*void	print_list(t_list *stack)
 {
 	if (!stack)
 		return ;
@@ -39,14 +38,14 @@ void	print_list(t_list *stack)
 		stack = stack->next;
 	}
 	ft_printf("fin de pile\n\n");
-}
+}*/
 
 int	ft_lstsize(t_list *stack)
 {
 	int	i;
 
 	i = 0;
-	while(stack)
+	while (stack)
 	{
 		stack = stack->next;
 		i++;
@@ -54,19 +53,19 @@ int	ft_lstsize(t_list *stack)
 	return (i);
 }
 
-int ft_abs(int nb)
+int	ft_abs(int nb)
 {
 	if (nb < 0)
 		nb = nb * -1;
-	return nb;
+	return (nb);
 }
 
 int	get_min_index(t_list *stack)
 {
-	int min;
+	int	min;
 
 	min = INT_MAX;
-	while(stack)
+	while (stack)
 	{
 		if (min > stack->index)
 			min = stack->index;
@@ -75,7 +74,7 @@ int	get_min_index(t_list *stack)
 	return (min);
 }
 
-int get_min_index_pos(t_list *stack)
+int	get_min_index_pos(t_list *stack)
 {
 	int	min_index_pos;
 	int	min_index;
@@ -93,4 +92,3 @@ int get_min_index_pos(t_list *stack)
 	}
 	return (min_index_pos);
 }
-
