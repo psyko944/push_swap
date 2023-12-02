@@ -20,13 +20,16 @@ void  ft_parse(t_list **stack_a, t_list **stack_b, int stacklen)
 	char *str;
 
 	str = get_next_line(0);
-	while (str)
+	while (str && ft_strlen(str) == 2)
 	{
-		if (ft_strlen(str != 2))
-			return  (ko);
+
+		get_next_line
 
 	}
-	
+	if (sorted(stack_a))
+		printf("OK\n");
+	else 
+		printf("KO\n");	
 }
 
 int main(int ac, char **av)
