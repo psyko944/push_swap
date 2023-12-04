@@ -28,21 +28,24 @@ static void	reverse_rotate(t_list **stack)
 	*stack = last;
 }
 
-void	rra(t_list **stack_a)
+void	rra(t_list **stack_a, char flag)
 {
 	reverse_rotate(stack_a);
-	ft_putstr("rra\n");
+	if (!flag)
+		ft_putstr("rra\n");
 }
 
-void	rrb(t_list **stack_b)
+void	rrb(t_list **stack_b, char flag)
 {
 	reverse_rotate(stack_b);
-	ft_putstr("rrb\n");
+	if (!flag)
+		ft_putstr("rrb\n");
 }
 
-void	rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b, char flag)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	ft_putstr("rrr\n");
+	if (!flag)
+		ft_putstr("rrr\n");
 }

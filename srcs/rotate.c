@@ -26,21 +26,24 @@ static void	rotate(t_list **stack)
 	last->next->next = NULL;
 }
 
-void	ra(t_list **stack_a)
+void	ra(t_list **stack_a, char flag)
 {
 	rotate(stack_a);
-	ft_putstr("ra\n");
+	if (!flag)
+		ft_putstr("ra\n");
 }
 
-void	rb(t_list **stack_b)
+void	rb(t_list **stack_b, char flag)
 {
 	rotate(stack_b);
-	ft_putstr("rb\n");
+	if (!flag)
+		ft_putstr("rb\n");
 }
 
-void	rr(t_list **stack_a, t_list **stack_b)
+void	rr(t_list **stack_a, t_list **stack_b, char flag)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	ft_putstr("rr\n");
+	if (!flag)
+		ft_putstr("rr\n");
 }

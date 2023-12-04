@@ -27,21 +27,24 @@ static void	swap(t_list *stack)
 	stack->next->index = index_tmp;
 }
 
-void	sa(t_list *stack_a)
+void	sa(t_list *stack_a, char flag)
 {
 	swap(stack_a);
-	ft_putstr("sa\n");
+	if (!flag)
+		ft_putstr("sa\n");
 }
 
-void	sb(t_list *stack_b)
+void	sb(t_list *stack_b, char flag)
 {
 	swap(stack_b);
-	ft_putstr("sb\n");
+	if (!flag)
+		ft_putstr("sb\n");
 }
 
-void	ss(t_list *stack_a, t_list *stack_b)
+void	ss(t_list *stack_a, t_list *stack_b, char flag)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_putstr("ss\n");
+	if (!flag)
+		ft_putstr("ss\n");
 }

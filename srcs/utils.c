@@ -27,18 +27,18 @@ void	free_stack(t_list **stack)
 	*stack = NULL;
 }
 
-/*void	print_list(t_list *stack)
+void	free_tab(char **tab)
 {
-	if (!stack)
-		return ;
-	printf("pile : \n");
-	while (stack != NULL)
+	int	i;
+
+	i = 0;
+	while (tab[i])
 	{
-		ft_printf("nombre : %d index : %d pos : %d\ttarget_pos : %d\tcost_a : %d cost_b : %d\n", stack->nbr, stack->index, stack->pos, stack->target_pos, stack->cost_a, stack->cost_b);
-		stack = stack->next;
+		free(tab[i]);
+		i++;
 	}
-	ft_printf("fin de pile\n\n");
-}*/
+	free(tab);
+}
 
 int	ft_lstsize(t_list *stack)
 {
@@ -58,20 +58,6 @@ int	ft_abs(int nb)
 	if (nb < 0)
 		nb = nb * -1;
 	return (nb);
-}
-
-int	get_min_index(t_list *stack)
-{
-	int	min;
-
-	min = INT_MAX;
-	while (stack)
-	{
-		if (min > stack->index)
-			min = stack->index;
-		stack = stack->next;
-	}
-	return (min);
 }
 
 int	get_min_index_pos(t_list *stack)

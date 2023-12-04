@@ -54,7 +54,7 @@ WHITE = \033[0;97m
 PURPLE= \033[38;2;255;105;180m
 RESET= \033[0m
 
-CC = cc
+CC = cc -Wall -Wextra -Werror -g3 
 
 RM = rm -f
 

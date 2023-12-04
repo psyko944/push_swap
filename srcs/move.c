@@ -19,7 +19,7 @@ static void	double_rotate(t_list **stack_a, t_list **stack_b,
 	{
 		(*cost)--;
 		(*cost2)--;
-		rr(stack_a, stack_b);
+		rr(stack_a, stack_b, 0);
 	}
 }
 
@@ -30,7 +30,7 @@ static void	double_rev_rotate(t_list **stack_a, t_list **stack_b,
 	{
 		(*cost)++;
 		(*cost2)++;
-		rrr(stack_a, stack_b);
+		rrr(stack_a, stack_b, 0);
 	}
 }
 
@@ -41,12 +41,12 @@ static void	move_stack_a(t_list **stack_a, int *cost)
 		if (*cost > 0)
 		{
 			(*cost)--;
-			ra(stack_a);
+			ra(stack_a, 0);
 		}
 		else if (*cost < 0)
 		{
 			(*cost)++;
-			rra(stack_a);
+			rra(stack_a, 0);
 		}
 	}
 }
@@ -58,12 +58,12 @@ static void	move_stack_b(t_list **stack_b, int *cost2)
 		if (*cost2 > 0)
 		{
 			(*cost2)--;
-			rb(stack_b);
+			rb(stack_b, 0);
 		}
 		else if (*cost2 < 0)
 		{
 			(*cost2)++;
-			rrb(stack_b);
+			rrb(stack_b, 0);
 		}
 	}
 }
@@ -76,5 +76,5 @@ void	move(t_list **stack_a, t_list **stack_b, int cost_a, int cost_b)
 		double_rotate(stack_a, stack_b, &cost_a, &cost_b);
 	move_stack_a(stack_a, &cost_a);
 	move_stack_b(stack_b, &cost_b);
-	pa(stack_a, stack_b);
+	pa(stack_a, stack_b, 0);
 }

@@ -12,6 +12,20 @@
 
 #include "../push_swap.h"
 
+static int	get_min_index(t_list *stack)
+{
+	int	min;
+
+	min = INT_MAX;
+	while (stack)
+	{
+		if (min > stack->index)
+			min = stack->index;
+		stack = stack->next;
+	}
+	return (min);
+}
+
 void	get_pos(t_list *stack)
 {
 	int	i;

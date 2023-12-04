@@ -36,11 +36,11 @@ void	sort_for_three(t_list **stack)
 		return ;
 	max_index = get_high_index(*stack);
 	if ((*stack)->index == max_index)
-		ra(stack);
+		ra(stack, 0);
 	else if ((*stack)->next->index == max_index)
-		rra(stack);
+		rra(stack, 0);
 	if ((*stack)->index > (*stack)->next->index)
-		sa(*stack);
+		sa(*stack, 0);
 }
 
 static void	fill_stack_b(t_list **stack_b, t_list **stack_a, int stacklen)
@@ -56,16 +56,16 @@ static void	fill_stack_b(t_list **stack_b, t_list **stack_a, int stacklen)
 	{
 		if ((*stack_a)->index < lentmp / 2)
 		{
-			pb(stack_b, stack_a);
+			pb(stack_b, stack_a, 0);
 			number_pushed++;
 		}
 		else
-			ra(stack_a);
+			ra(stack_a, 0);
 		stacklen--;
 	}
 	while (lentmp - number_pushed > 3)
 	{
-		pb(stack_b, stack_a);
+		pb(stack_b, stack_a, 0);
 		number_pushed++;
 	}
 }
@@ -82,7 +82,7 @@ static void	move_to_top(t_list **stack_a)
 	{
 		while (min_index_pos < stacklen)
 		{
-			rra(stack_a);
+			rra(stack_a, 0);
 			min_index_pos++;
 		}
 	}
@@ -90,7 +90,7 @@ static void	move_to_top(t_list **stack_a)
 	{
 		while (min_index_pos > 0)
 		{
-			ra(stack_a);
+			ra(stack_a, 0);
 			min_index_pos--;
 		}
 	}

@@ -24,41 +24,58 @@ int	is_sorted(t_list *stack)
 	return (1);
 }
 
-static void	selection_sort(t_list **stack_a, t_list **stack_b, int stacklen)
+static void	selection_sort(t_list **stack_a)
 {
+	t_list	*stack_b;
+	int		stacklen;
+
+	stack_b = NULL;
+	stacklen = ft_lstsize(*stack_a);
 	if (stacklen == 2)
-		sa(*stack_a);
+		sa(*stack_a, 0);
 	else if (stacklen == 3)
 		sort_for_three(stack_a);
 	else
-		sort(stack_a, stack_b, stacklen);
+		sort(stack_a, &stack_b, stacklen);
+}
+
+static int	ft_parse(char **av, int *flag)
+{
+	if (!check_arg(av))
+	{
+		ft_printf("Error\n incorrect format\n");
+		if (*flag)
+			free_tab(av);
+		return (0);
+	}	
+	return (1);
 }
 
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
-	t_list	*stack_b;
-	int		stacklen;
+	int		flag;
 
+	flag = 0;
 	if (ac < 2)
 	{
 		ft_printf("Error\n wrong number of arguments\n");
 		return (0);
 	}
 	if (len_tab(av) == 2)
+	{
 		av = ft_split(av[1], ' ');
+		flag = 1;
+	}
 	else
 		av += 1;
-	if (!check_arg(av))
-	{
-		ft_printf("Error\n incorrect format\n");
+	if (!ft_parse(av, &flag))
 		return (0);
-	}
 	stack_a = fill_stack(av);
-	stack_b = NULL;
-	stacklen = ft_lstsize(stack_a);
 	if (!is_sorted(stack_a))
-		selection_sort(&stack_a, &stack_b, stacklen);
+		selection_sort(&stack_a);
 	free_stack(&stack_a);
+	if (flag)
+		free_tab(av);
 	return (0);
 }

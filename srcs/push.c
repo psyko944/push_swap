@@ -32,14 +32,16 @@ static void	push(t_list **stack, t_list **push)
 	*push = new;
 }
 
-void	pa(t_list **stack_a, t_list **stack_b)
+void	pa(t_list **stack_a, t_list **stack_b, char flag)
 {
 	push(stack_a, stack_b);
-	ft_putstr("pa\n");
+	if (!flag)
+		ft_putstr("pa\n");
 }
 
-void	pb(t_list **stack_b, t_list **stack_a)
+void	pb(t_list **stack_b, t_list **stack_a, char flag)
 {
 	push(stack_b, stack_a);
-	ft_putstr("pb\n");
+	if (!flag)
+		ft_putstr("pb\n");
 }

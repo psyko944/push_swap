@@ -10,6 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
+#include <stddef.h>
+
+static size_t	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -54,4 +65,10 @@ char	*ft_strchr(const char *str, int c)
 		i++;
 	}
 	return (retval + i);
+}
+
+void	ft_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(1);
 }

@@ -33,5 +33,6 @@ char	*ft_get_line(char *save);
 /*      libc functions                        */
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
+void	ft_error(void);
 
 #endif
