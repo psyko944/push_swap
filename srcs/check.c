@@ -80,9 +80,6 @@ int	check_arg(char **av)
 		i++;
 	}
 	if (!check_double(av))
-	{
-		puts("ya des doublons ma gueule\n");
 		return (0);
-	}
 	return (1);
 }

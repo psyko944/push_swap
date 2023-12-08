@@ -40,7 +40,7 @@ int	ft_atoi(const char *str)
 	}
 	if ((resultat * sign) < INT_MIN || (resultat * sign) > INT_MAX)
 	{
-		printf("overflow");
+		write(2, "Error\n", 6);
 		exit(1);
 	}
 	return ((int)(resultat * sign));

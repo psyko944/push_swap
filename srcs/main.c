@@ -43,10 +43,10 @@ static int	ft_parse(char **av, int *flag)
 {
 	if (!check_arg(av))
 	{
-		ft_printf("Error\n incorrect format\n");
+		write(2, "Error\n", 6);
 		if (*flag)
 			free_tab(av);
-		return (0);
+		exit(1);
 	}	
 	return (1);
 }
@@ -58,10 +58,7 @@ int	main(int ac, char **av)
 
 	flag = 0;
 	if (ac < 2)
-	{
-		ft_printf("Error\n wrong number of arguments\n");
 		return (0);
-	}
 	if (len_tab(av) == 2)
 	{
 		av = ft_split(av[1], ' ');

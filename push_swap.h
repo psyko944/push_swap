@@ -27,21 +27,20 @@
 /* struct for linked list */
 typedef struct s_list
 {	
-	int nbr;
-	int index;
-	int pos;
-	int cost_a;
-	int	cost_b;
-	int	target_pos;
-	struct s_list *next;
+	int				nbr;
+	int				index;
+	int				pos;
+	int				cost_a;
+	int				cost_b;
+	int				target_pos;
+	struct s_list	*next;
 }	t_list;
 
-
 /*    libft functions       */
-int	ft_atoi(const char *str);
-int	ft_isdigit(int c);
-int	ft_lstsize(t_list *stack);
-t_list *ft_lstlast(t_list *lst);
+int		ft_atoi(const char *str);
+int		ft_isdigit(int c);
+int		ft_lstsize(t_list *stack);
+t_list	*ft_lstlast(t_list *lst);
 char	**ft_split(char const *s, char c);
 //void	ft_putstr(char *str);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -55,7 +54,7 @@ void	free_stack(t_list **stack);
 void	print_list(t_list *stack);
 int		is_sorted(t_list *stack);
 int		get_high_index(t_list *stack);
-int 	ft_abs(int nb);
+int		ft_abs(int nb);
 int		check_arg(char **av);
 int		get_min_index_pos(t_list *stack);
 void	add_index(t_list *stack, int stacklen);
